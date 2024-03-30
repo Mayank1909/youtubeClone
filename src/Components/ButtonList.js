@@ -14,7 +14,7 @@ const ButtonList = () => {
         "Kapil Sharma",
         // "Game Show",
         // "T-series",
-        // "Podcast",
+        "Podcast",
         // "Data Structure"
     ];
     return (
