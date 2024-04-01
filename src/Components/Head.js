@@ -8,7 +8,7 @@ import { cacheResult } from '../utils/searchSlice';
 
 const Head = () => {
     const [searchQuery, setSearchQuery] = useState([]);
-    const [suggestions, setSuggestions] = useState({});
+    const [suggestions, setSuggestions] = useState([]);
     const [showsuggestion, setShowsuggestions] = useState([]);
     // console.log(searchQuery)
     // debouncing 
