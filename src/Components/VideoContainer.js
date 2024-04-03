@@ -25,7 +25,7 @@ const VideoContainer = () => {
                     <Link to={"/watch?v=" + video.id} key={video.id} ><VideoCard info={video} /></Link>
                 ))
             }
-        </div>
+        </div >
     )
 }
 

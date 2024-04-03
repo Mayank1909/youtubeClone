@@ -8,8 +8,8 @@ import { cacheResult } from '../utils/searchSlice';
 
 const Head = () => {
     const [searchQuery, setSearchQuery] = useState([]);
-    const [suggestions, setSuggestions] = useState([]);
-    const [showsuggestion, setShowsuggestions] = useState([]);
+    const [suggestions, setSuggestions] = useState({});
+    const [showsuggestion, setShowsuggestions] = useState(false);
     // console.log(searchQuery)
     // debouncing 
     // make an api call after every key press
@@ -69,7 +69,7 @@ const Head = () => {
                 </div>
                 {
                     showsuggestion &&
-                    (<div className='fixed bg-white w-[26rem] m-1  px-2 py-2  rounded-lg border border-gray-100 '>
+                    (<div className='fixed bg-white w-[26rem]   rounded-lg border border-gray-100 '>
                         <ul>{
                             suggestions.map((s) => (<li key={s} className='py-1 px-2 shadow-sm hover:bg-gray-100'> {s}</li>))
                         }

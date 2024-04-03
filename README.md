@@ -81,3 +81,14 @@ Performance:
 Debouncing with 200ms 
 - if differnce between two key storkes is <200ms - decline it means when I am typing fast.
 
+## Search Bar summary
+ -So here it is I made the search bar basically When a person type something in the searchbar Its like suggestions starts coming below
+ the searchbar So how much time does it take to change the result as per the text entered that thing we can set using debouncing 
+ - Also we can save the previous results based on the search the user has typed So that there is no extra API call , for that another search slice is made using redux to store the cache search.
+
+ ## Comments 
+    -Although youtube does not uses nth-level commenting but I have used Nth-level commenting just like reddit has 
+    -In that concept of nth-commnets we use recursion to display the replies as at the end of the days replies are nothing but comments.
+
+## building live chat 
+
