@@ -87,8 +87,18 @@ Debouncing with 200ms
  - Also we can save the previous results based on the search the user has typed So that there is no extra API call , for that another search slice is made using redux to store the cache search.
 
  ## Comments 
-    -Although youtube does not uses nth-level commenting but I have used Nth-level commenting just like reddit has 
-    -In that concept of nth-commnets we use recursion to display the replies as at the end of the days replies are nothing but comments.
+ -Although youtube does not uses nth-level commenting but I have used Nth-level commenting just like reddit has 
+ -In that concept of nth-commnets we use recursion to display the replies as at the end of the days replies are nothing but comments.
 
 ## building live chat 
+
+  To build the live chat thing we need are :
+    -Get the data live
+    -Update the data
+   HOW ?
+    -Web socket(trading apps) very fast like zerodha
+    -API polling(Gmail) -- here we set an interval to call the API after a certain amount of time there will be an API polling like in - cricbuzz when we are in the website and page refershes after every 25 secs so thats the interval that has been set.
+
+
+
 

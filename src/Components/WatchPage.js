@@ -5,6 +5,7 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import ButtonList from './ButtonList';
 import VideoContainer from './VideoContainer';
 import Comments from './Comments';
+import LiveChat from './LiveChat';
 
 
 
@@ -20,12 +21,17 @@ const WatchPage = () => {
     return (
         <div>
             <div className='px-5 py-3 flex'>
-                <iframe className='rounded-lg' width="1000" height="515" src={`https://www.youtube.com/embed/` + searchParrams.get("v")}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen></iframe>
+                <div>
+                    <iframe className='rounded-lg' width="1000" height="515" src={`https://www.youtube.com/embed/` + searchParrams.get("v")}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen></iframe>
+                </div>
+                <div>
+                    <LiveChat />
+                </div>
                 {/* <h1>{channelTitle}</h1> */}
             </div>
             <div>
