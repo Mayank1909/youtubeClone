@@ -7,7 +7,7 @@ const Sidebar = () => {
 
     if (!isMenuOpen) return null;
     return (
-        <div className='flex  shadow-lg '>
+        <div className='shadow-lg  flex flex-col sticky'>
             <div className="flex-1 overflow-y-auto ">
                 <ul className="mt-6 cursor-pointer w-52">
                     <li className="px-4 py-2 hover:bg-gray-200 font-bold rounded-lg">
