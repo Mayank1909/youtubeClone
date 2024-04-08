@@ -40,7 +40,7 @@ const VideoContainer = () => {
     }
     if (!videoes.length) return <Shimmer />
     return (
-        <div className=' p-2 m-2 flex flex-wrap ml-14'>
+        <div className=' p-2 mx-15 flex flex-wrap ml-20 justify-center'>
 
             {
                 videoes.map((video) =>

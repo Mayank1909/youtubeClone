@@ -32,7 +32,6 @@ const WatchPage = () => {
                 <div>
                     <LiveChat />
                 </div>
-                {/* <h1>{channelTitle}</h1> */}
             </div>
             <div>
                 <Comments />

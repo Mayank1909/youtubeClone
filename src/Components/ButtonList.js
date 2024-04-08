@@ -18,7 +18,7 @@ const ButtonList = () => {
         // "Data Structure"
     ];
     return (
-        <div className='flex '>
+        <div className='flex  ml-[250px] z-40 bg-white pb-2 '>
             {categories.map((category, index) => <Button key={index} category={category} />)}
         </div>
     )
