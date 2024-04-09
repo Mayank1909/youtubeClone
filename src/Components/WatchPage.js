@@ -39,8 +39,8 @@ const WatchPage = () => {
         console.log(relatedVideos);
     }
     return (
-        <div>
-            <div className='px-5 py-2 flex'>
+        <div className='col-span-10 pt-3 flex w-full mt-[40px]'>
+            <div className=' px-3 flex-grow-6'>
                 <div>
                     <iframe className='rounded-lg' width="1000" height="515" src={`https://www.youtube.com/embed/` + videoId}
                         title="YouTube video player"
@@ -49,39 +49,35 @@ const WatchPage = () => {
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen></iframe>
                 </div>
-                <div>
-                    {/* <LiveChat /> */}
-                </div>
-            </div>
-            <div className='p-2 m-2'>
-                <div>
-                    <div className='font-medium text-[18px]'>{video?.snippet?.title}</div>
-                    <div className='mt-2 flex justify-between'>
-                        <div className='flex'>
+
+                <div className='p-2 m-2'>
+                    <div>
+                        <div className='font-medium text-[18px]'>{video?.snippet?.title}</div>
+                        <div className='mt-2 flex justify-between'>
                             <div className='flex'>
-                                <img className='rounded-full w-10 h-10' alt='thumbnail' src={video?.snippet?.thumbnails?.default?.url} />
-                                <div className='flex flex-col justify-center ml-2'>
-                                    <div className='font-bold text-[16px]'>{video?.snippet?.channelTitle}</div>
-                                    <div className='text-gray-500 text-[12px]'>{formatCompactNumber(video?.statistics?.viewCount)} Subscriber</div>
+                                <div className='flex'>
+                                    <img className='rounded-full w-10 h-10' alt='thumbnail' src={video?.snippet?.thumbnails?.default?.url} />
+                                    <div className='flex flex-col justify-center ml-2'>
+                                        <div className='font-bold text-[16px]'>{video?.snippet?.channelTitle}</div>
+                                        <div className='text-gray-500 text-[12px]'>{formatCompactNumber(video?.statistics?.viewCount)} Subscriber</div>
+                                    </div>
                                 </div>
+                                <button className='bg-black rounded-full px-4 ml-2 text-white'>Subscribe</button>
                             </div>
-                            <button className='bg-black rounded-full px-4 ml-2 text-white'>Subscribe</button>
-                        </div>
-                        <div className='flex'>
-                            <button className='bg-gray-100 rounded-l-full px-4 hover:bg-gray-200'><img alt='likeBtn' className='inline-block' src={like} /> 65K</button>
-                            <button className='bg-gray-100 rounded-r-full px-4 border-l-2 border-gray-300 hover:bg-gray-200'><img alt='dislikeBtn' className='inline-block' src={disLike} /></button>
-                            <button className='bg-gray-100 rounded-full px-4 ml-2 hover:bg-gray-200'><img alt='shareBtn' className='inline-block' src={share} /> Share</button>
-                            <button className='bg-gray-100 rounded-full px-4 ml-2 hover:bg-gray-200'><img alt='downloadBtn' className='inline-block' src={download} /> Download</button>
-                            <button className='bg-gray-100 rounded-full w-10 h-10 ml-2 hover:bg-gray-200'><img alt='moreBtn' className='inline-block' src={more} /></button>
+                            <div className='flex'>
+                                <button className='bg-gray-100 rounded-l-full px-4 hover:bg-gray-200'><img alt='likeBtn' className='inline-block' src={like} /> 65K</button>
+                                <button className='bg-gray-100 rounded-r-full px-4 border-l-2 border-gray-300 hover:bg-gray-200'><img alt='dislikeBtn' className='inline-block' src={disLike} /></button>
+                                <button className='bg-gray-100 rounded-full px-4 ml-2 hover:bg-gray-200'><img alt='shareBtn' className='inline-block' src={share} /> Share</button>
+                                <button className='bg-gray-100 rounded-full px-4 ml-2 hover:bg-gray-200'><img alt='downloadBtn' className='inline-block' src={download} /> Download</button>
+                                <button className='bg-gray-100 rounded-full w-10 h-10 ml-2 hover:bg-gray-200'><img alt='moreBtn' className='inline-block' src={more} /></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>            <div>
-                <Comments />
             </div>
             <div className='flex-grow-3'>
                 <div className='flex flex-col w-full'>
-                    <div className='px-3 m-1 flex  w-full '>
+                    <div className='px-3 m-1   w-full '>
                         <LiveChat />
                     </div>
                     {relatedVideos?.map(video =>
