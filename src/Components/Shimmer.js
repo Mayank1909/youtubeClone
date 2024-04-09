@@ -2,7 +2,8 @@ import React from 'react'
 
 const ShimmerCard = () => {
     return (
-        <div className='m-2 w-80'>
+        <div className='mx-12 w-80'>
+
             <div className='shimmerBG rounded-lg bg-gray-300 w-auto h-40'></div>
             <div className='flex justify-start items-start mt-2'>
                 <div className='shimmerBG bg-gray-300 rounded-full w-10 h-9 mt-2 '></div>
