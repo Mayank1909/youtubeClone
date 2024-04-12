@@ -5,9 +5,10 @@ import { YOUTUBE_SEARCH_API } from '../utils/constants';
 import { cacheResult } from '../utils/searchSlice';
 import bell from "../assets/bell.svg"
 import create from "../assets/create.svg"
+import { BrowserRouter, useNavigate } from 'react-router-dom';
 
 const Head = () => {
-    const [searchQuery, setSearchQuery] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
     const [suggestions, setSuggestions] = useState({});
     const [showsuggestion, setShowsuggestions] = useState(false);
     // console.log(searchQuery)
@@ -16,6 +17,9 @@ const Head = () => {
     // but if the diifference between 2 API calls is <200ms then
     // decline the API call
     const searchCache = useSelector((store) => store.search);
+    const navigate = useNavigate();
+
+
     useEffect(() => {
         const timer = setTimeout(() => {
             if (searchCache[searchQuery]) {
@@ -29,6 +33,7 @@ const Head = () => {
             clearTimeout(timer);
         };
     }, [searchQuery])
+
     const getsearchSuggestion = async () => {
         // console.log("API call" + searchQuery)
         const data = await fetch(YOUTUBE_SEARCH_API + searchQuery)
@@ -38,6 +43,12 @@ const Head = () => {
         dispatch(cacheResult({
             [searchQuery]: json[1]
         }));
+
+    }
+    const handleSearched = (e) => {
+        setSearchQuery(e.target.innerText);
+        setShowsuggestions(false);
+        navigate('/results?search_query=' + encodeURI(e.target.innerText))
 
     }
     const dispatch = useDispatch();
@@ -71,7 +82,11 @@ const Head = () => {
                     showsuggestion &&
                     (<div className='fixed bg-white w-[26rem]   rounded-lg border border-gray-100 '>
                         <ul>{
-                            suggestions.map((s) => (<li key={s} className='py-1 px-2 shadow-sm hover:bg-gray-100'> {s}</li>))
+                            suggestions.map((s) =>
+                            (
+
+                                <li key={s} className='py-1 px-2 shadow-sm hover:bg-gray-100' onMouseDown={(e) => handleSearched(e)}> {s}</li>
+                            ))
                         }
                         </ul>
                     </div>)}
