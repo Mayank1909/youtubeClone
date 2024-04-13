@@ -4,13 +4,14 @@ import { closeMenu } from '../utils/slice';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import Comments from './Comments';
 import LiveChat from './LiveChat';
-import { MY_KEY, YOUTUBE_VIDEO_WATCH_API } from '../utils/constants';
+import { MY_KEY, YOUTUBE_RECOMENDED_VIDEO_LIST_API, YOUTUBE_VIDEO_WATCH_API } from '../utils/constants';
 import { formatCompactNumber } from '../utils/helper';
 import like from "../assets/like.svg"
 import disLike from "../assets/dislike.svg"
 import download from "../assets/download.svg"
 import more from "../assets/more.svg"
 import share from "../assets/share.svg"
+
 
 
 
@@ -28,6 +29,9 @@ const WatchPage = () => {
         dispatch(closeMenu());
         getVideoDetails();
     }, [])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
     const getVideoDetails = async () => {
         const data = await Promise.all([fetch(YOUTUBE_VIDEO_WATCH_API + videoId), fetch(MY_KEY)]);
         const watchjson = await data[0].json();
@@ -72,6 +76,9 @@ const WatchPage = () => {
                                 <button className='bg-gray-100 rounded-full w-10 h-10 ml-2 hover:bg-gray-200'><img alt='moreBtn' className='inline-block' src={more} /></button>
                             </div>
                         </div>
+                    </div>
+                    <div className='p-2 m-2'>
+                        <Comments />
                     </div>
                 </div>
             </div>
